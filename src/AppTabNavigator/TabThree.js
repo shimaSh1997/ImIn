@@ -13,7 +13,7 @@ class TabThree extends Component {
   }
 
   onButtonPress = () => {
-    this.props.stackNavigation.push("DetailActivity");
+    this.props.stackNavigation.navigate("DetailActivity",{data:this.state.name});
   };
 
   render() {

@@ -6,9 +6,11 @@ class Detail extends Component {
     header: null
   };
   render() {
+    const item = this.props.navigation.getParam('data')
     return (
       <View style={styles.container}>
         <Text> detail </Text>
+        <Text>item: {JSON.stringify(item)}</Text>
       </View>
     );
   }

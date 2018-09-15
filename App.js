@@ -7,6 +7,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
+import Detail from './src/screens/Detail';
 
 
 class App extends Component{

@@ -1,53 +1,42 @@
-import React ,{ Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
+import React, { Component } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-import { createBottomTabNavigator } from 'react-navigation';
-import TabOne from '../AppTabNavigator/TabOne';
-import TabTwo from '../AppTabNavigator/TabTwo';
-import TabThree from '../AppTabNavigator/TabThree';
+import { createBottomTabNavigator } from "react-navigation";
+import TabOne from "../AppTabNavigator/TabOne";
+import TabTwo from "../AppTabNavigator/TabTwo";
+import TabThree from "../AppTabNavigator/TabThree";
 
-class Home extends Component{
-    // static navigationOptions = {
-    //     header: null
-    // }
+class Home extends Component {
+  // static navigationOptions = {
+  //     header: null
+  // }
 
-    render(){
-        return(
-            <AppTabNavigator/>
-         
-        )
-    }
+  render() {
+    return AppTabNavigator(this.props.navigation);
+  }
 }
 
-const AppTabNavigator = createBottomTabNavigator({
-    ProfileTab:{
-        screen:TabOne
+const AppTabNavigator = navigation => {
+  const TabNav = createBottomTabNavigator({
+    ProfileTab: {
+      screen: TabOne
     },
-    HomeTab:{
-        screen:TabTwo
+    HomeTab: {
+      screen: TabTwo
     },
-    Courses:{
-        screen:TabThree
-    },
-    
-    
-
-
-
-})
+    Courses: {
+      screen: () => <TabThree stackNavigation={navigation} />
+    }
+  });
+  return <TabNav />;
+};
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center',
-        
-    }
-})
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
 
 export default Home;

@@ -30,9 +30,10 @@ class TabThree extends Component {
           />
         </CardSection>
         <CardSection>
-          <TouchableOpacity onPress={this.onButtonPress}>
-            <Text>click me</Text>
-          </TouchableOpacity>
+          <Button
+              whenPressed={this.onButtonPress.bind(this)}>
+              
+          </Button>
         </CardSection>
       </Card>
     );

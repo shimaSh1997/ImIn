@@ -8,6 +8,7 @@ import {
 import Card from '../components/common/Card';
 import CardSection from '../components/common/CardSection';
 import Input from '../components/common/Input';
+import Button from '../components/common/Button';
 
 
 class TabThree extends Component{
@@ -20,7 +21,12 @@ class TabThree extends Component{
         this.setState({name:text})
     }
 
+    // onButtonPress(){
+    //     this.props.navigation.navigate('DetailActivity')
+    // }
+
     render(){
+        
         return(
             <Card>
                 <CardSection>
@@ -29,8 +35,17 @@ class TabThree extends Component{
                         placeholder="Enter your name"
                         value={this.state.name}
                         onChangeText={this.onNameChange.bind(this)}
-                        
+
                         />
+                </CardSection>
+                <CardSection>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('DetailActivity')}>
+                    <Text>
+                       click me
+                    </Text>
+
+                </TouchableOpacity>
+
                 </CardSection>
 
             </Card>

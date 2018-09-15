@@ -27,6 +27,10 @@ const AppStackNavigator = StackNavigator({
     screen:Home
   },
 
+  DetailActivity:{
+    screen:Detail
+  },
+
   headerMode: 'none',
   initialRouteName: 'LoginActivity'  
 

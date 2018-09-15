@@ -5,7 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native';
-
+import Card from '../components/common/Card';
+import CardSection from '../components/common/CardSection';
 
 
 class TabThree extends Component{
@@ -15,13 +16,20 @@ class TabThree extends Component{
 
     render(){
         return(
-           
-            <View style={styles.container}>
-                    <Text>
-                        Tab Three
-                    </Text>
-            </View>
+            <Card>
+                <CardSection>
+                    <Input
+                        label="name"
+                        placeholder="Enter your name"
+                        onChangeText={this.onNameChange.bind(this)}
+                        value={this.props.email}
+                        />
+                </CardSection>
+
+            </Card>
         )
+           
+            
     }
 }
 

@@ -7,12 +7,18 @@ import {
 } from 'react-native';
 import Card from '../components/common/Card';
 import CardSection from '../components/common/CardSection';
+import Input from '../components/common/Input';
 
 
 class TabThree extends Component{
     // static navigationOptions = {
     //     header: null
     // }
+    state = {name:''}
+
+    onNameChange(text){
+        this.setState({name:text})
+    }
 
     render(){
         return(
@@ -21,8 +27,9 @@ class TabThree extends Component{
                     <Input
                         label="name"
                         placeholder="Enter your name"
+                        value={this.state.name}
                         onChangeText={this.onNameChange.bind(this)}
-                        value={this.props.email}
+                        
                         />
                 </CardSection>
 

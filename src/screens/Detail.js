@@ -13,6 +13,7 @@ class Detail extends Component{
     render(){
         return(
             <View style={styles.container}>
+                <text> detail </text>
                
             </View>
 

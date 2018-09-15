@@ -19,11 +19,7 @@ class Home extends Component{
     render(){
         return(
             <AppTabNavigator/>
-            // <View style={styles.container}>
-            //         <Text>
-            //             Home
-            //         </Text>
-            // </View>
+         
         )
     }
 }
@@ -37,7 +33,9 @@ const AppTabNavigator = createBottomTabNavigator({
     },
     Courses:{
         screen:TabThree
-    }
+    },
+    
+    
 
 
 

@@ -31,6 +31,7 @@ class TabThree extends Component {
         </CardSection>
         <CardSection>
           <Button
+              text="click me"
               whenPressed={this.onButtonPress.bind(this)}>
               
           </Button>

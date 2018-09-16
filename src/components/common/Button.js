@@ -5,7 +5,7 @@ import { Text,TouchableOpacity } from  'react-native';
 const Button = (props) => {
     return(
         <TouchableOpacity onPress={props.whenPressed} style={styles.buttonStyle} >
-            <Text style = {styles.textStyle} > Click me!!! </Text>
+            <Text style = {styles.textStyle} > {props.text} </Text>
         </TouchableOpacity>
     )
 
@@ -16,7 +16,7 @@ const styles = {
 
     textStyle:{
         alignSelf:'center',
-        color:'#007aff',
+        color:'#ffffff',
         fontSize:16,
         fontWeight:'600',
         paddingTop:10,
@@ -24,14 +24,14 @@ const styles = {
     },
 
     buttonStyle:{
-        flex:1,
+        width:280,
         alignSelf:'stretch',
-        backgroundColor:'#fff',
-        borderRadius:5,
+        backgroundColor:'transparent',
+        borderRadius:15,
         borderWidth:1,
-        borderColor:'#007aff',
-        marginLeft:5,
-        marginRight:5
+        borderColor:'#372b60',
+       
+        
     }
 }
 

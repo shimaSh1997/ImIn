@@ -3,9 +3,7 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity,
     ScrollView,
-    ImageBackground
 } from 'react-native';
 import { Fumi } from 'react-native-textinput-effects';
 import codepen from 'react-native-vector-icons/Ionicons';
@@ -66,7 +64,7 @@ class Login extends Component {
                             <Fumi
                                 style={styles.container}
                                 label={'code'}
-                                labelStyle={{ color: '#37b80b2', marginLeft: 5 }}
+                                labelStyle={{ color: '#37b80b2', marginLeft: 5,marginBottom:3 }}
                                 iconClass={codepen}
                                 iconName={'logo-codepen'}
                                 iconColor={'#000080'}
@@ -77,7 +75,7 @@ class Login extends Component {
                                 maxLength={10}
                                 inputStyle={styles.input}
                             />
-                            <Text>
+                            <Text style={{left:180,top:10}}>
                                 character left:{this.state.code.length}/10
                             </Text>
 
@@ -142,7 +140,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 24,
         backgroundColor: 'transparent',
-        borderRadius: 12
+        borderRadius: 12,
     },
     content: {
         // not cool but good enough to make all inputs visible when keyboard is active
@@ -159,7 +157,8 @@ const styles = StyleSheet.create({
         padding: 16,
         borderRadius: 12,
         marginLeft: 5,
-        marginRight: 5
+        marginRight: 5,
+        position:'absolute'
     }
 })
 

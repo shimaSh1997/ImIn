@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, Picker } from "react-native";
 import { Isao } from 'react-native-textinput-effects';
-import { Picker } from 'react-native-picker-dropdown';
+//import { Picker } from 'react-native-picker-dropdown';
 import Button from '../components/common/Button';
 
 
@@ -32,13 +32,15 @@ class Profile extends Component {
 
   render() {
     return (
-      <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'contain' }} source={{ uri: 'back' }}>
-        <View style={[styles.card1, { backgroundColor: 'transparent' }]}>
+      <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }} source={{ uri: 'backtest' }}
+        blurRadius={2}>
+
+        <View style={[styles.card1, { backgroundColor: 'transparent', width: 280, marginLeft: 40, marginTop: 2 }]}>
           <Isao
             label={'First Name'}
             labelStyle={{ fontStyle: 'italic' }}
             activeColor={'#FFFFFF'}
-            passiveColor={'#000000'}
+            passiveColor={'#FFFFFF'}
             style={styles.input}
           />
           <Isao
@@ -46,45 +48,69 @@ class Profile extends Component {
             labelStyle={{ fontStyle: 'italic' }}
             label={'Last Name'}
             activeColor={'#FFFFFF'}
-            passiveColor={'#000000'}
+            passiveColor={'#FFFFFF'}
           />
           <Isao
             style={styles.input}
             labelStyle={{ fontStyle: 'italic' }}
             label={'Email'}
             activeColor={'#FFFFFF'}
-            passiveColor={'#000000'}
+            passiveColor={'#FFFFFF'}
           />
-          <Text style={{ color: "#000000", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Entry Year</Text>
-          <Picker
-            selectedValue={this.state.entryYear}
-            onValueChange={this.onEntryYearChange}
-            prompt="Choose your Entry Year"
-            mode="dropdown"
-            style={styles.picker}
-            textStyle={styles.pickerText}
-            cancel
-          >
-            <Picker.Item label="1394" value="1394" />
-            <Picker.Item label="1395" value="1395" />
-            <Picker.Item label="1396" value="1396" />
-            <Picker.Item label="1397" value="1397" />
-          </Picker>
-        </View>
-      
-        <View style={{marginLeft:30,marginTop:40}}>
-        <Button
-          text="Register"
-        />
+          <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+            <View>
+              <Text style={{ color: "#FFFFFF", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Entry Year</Text>
+              <Picker
+                selectedValue={this.state.entryYear}
+                onValueChange={this.onEntryYearChange}
+
+                mode="dropdown"
+                style={styles.picker}
+              >
+                <Picker.Item label="1394" value="1394" />
+                <Picker.Item label="1395" value="1395" />
+                <Picker.Item label="1396" value="1396" />
+                <Picker.Item label="1397" value="1397" />
+              </Picker>
+
+            </View>
+            <View>
+              <Text style={{ color: "#FFFFFF", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Mager</Text>
+              <Picker
+                selectedValue={this.state.mager}
+                onValueChange={this.onMagerChange}
+
+                mode="dropdown"
+                style={styles.picker}
+              >
+                <Picker.Item label="computer Eng" value="" />
+                <Picker.Item label="Industerial Eng" value="IE" />
+                <Picker.Item label="Petolium Eng" value="PE" />
+                <Picker.Item label="Chemical Eng" value="1397" />
+              </Picker>
+
+          
+            
+
+            </View>
+
+          </View>
+
 
         </View>
 
+        <View style={{ marginLeft: 40, marginTop: 30 }}>
+          <Button
+            text="Register"
+          />
 
-        
-
-
-
+        </View>
       </ImageBackground>
+
+
+
+
+
 
     );
   }
@@ -122,14 +148,19 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   picker: {
-    alignSelf: 'stretch',
     backgroundColor: 'transparent',
-
-
-    marginLeft: 5,
+    paddingHorizontal: 50,
+    paddingVertical: 20,
+    margin: 1,
+    marginLeft: 18,
     borderRadius: 10,
+    borderColor: '#000000',
+    borderWidth: 5,
+    alignSelf: 'flex-start',
+    color: '#FFFFFF'
   },
+
   pickerText: {
-    color: '#000000',
+    color: '#FFFFFF',
   }
 })

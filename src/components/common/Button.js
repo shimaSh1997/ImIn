@@ -16,7 +16,7 @@ const styles = {
 
     textStyle:{
         alignSelf:'center',
-        color:'#0000000',
+        color:'#FFFFFF',
         fontSize:16,
         fontWeight:'600',
         paddingTop:10,
@@ -26,10 +26,12 @@ const styles = {
     buttonStyle:{
         width:280,
         alignSelf:'stretch',
-        backgroundColor:'#FFFFFF',
-        borderRadius:15,
+        backgroundColor:'#000000',
+        borderRadius:45,
         borderWidth:1,
         borderColor:'#372b60',
+        opacity:10,
+        shadowOpacity:10
        
         
     }

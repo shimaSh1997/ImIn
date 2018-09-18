@@ -7,9 +7,9 @@ import TabTwo from "../AppTabNavigator/TabTwo";
 import TabThree from "../AppTabNavigator/TabThree";
 
 class Home extends Component {
-  // static navigationOptions = {
-  //     header: null
-  // }
+  static navigationOptions = {
+    header: null
+  }
 
   render() {
     return AppTabNavigator(this.props.navigation);

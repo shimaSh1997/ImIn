@@ -9,7 +9,7 @@ import { Fumi } from 'react-native-textinput-effects';
 import codepen from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import Button from '../components/common/Button';
-import Dialog from 'react-native-dialog'
+import Dialog from 'react-native-dialog';
 
 
 
@@ -34,7 +34,7 @@ class Login extends Component {
     controler = () => {
         if (this.state.code.length == 10) {
             return (
-                this.props.navigation.navigate("HomeActivity")
+                this.props.navigation.navigate("ProfileActivity")
             )
 
 
@@ -64,19 +64,19 @@ class Login extends Component {
                             <Fumi
                                 style={styles.container}
                                 label={'code'}
-                                labelStyle={{ color: '#37b80b2', marginLeft: 5,marginBottom:3 }}
+                                labelStyle={{ color: '#37b80b2', marginLeft: 5 }}
                                 iconClass={codepen}
-                                iconName={'logo-codepen'}
+                                iconName={"logo-codepen"}
                                 iconColor={'#000080'}
                                 iconSize={20}
-                                placeholder="Enter code"
+
                                 value={this.state.code}
                                 onChangeText={this.onCodeChange.bind(this)}
                                 maxLength={10}
                                 inputStyle={styles.input}
                             />
-                            <Text style={{left:180,top:10}}>
-                                character left:{this.state.code.length}/10
+                            <Text style={{ left: 180, top: 10 }}>
+                                Character Left:{this.state.code.length}/10
                             </Text>
 
 
@@ -105,7 +105,7 @@ class Login extends Component {
                             whenPressed={() => this.showDialog()}
 
                         />
-                        <View style={{elevation:3}}>
+                        <View style={{ elevation: 3 }}>
                             <Dialog.Container visible={this.state.dialogVisible}>
                                 <Dialog.Title> Start </Dialog.Title>
                                 <Dialog.Description>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         marginLeft: 5,
         marginRight: 5,
-        position:'absolute'
+        position: 'absolute'
     }
 })
 

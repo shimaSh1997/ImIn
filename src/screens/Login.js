@@ -3,11 +3,10 @@ import {
     View,
     Text,
     StyleSheet,
-    ScrollView,
+    ImageBackground
 } from 'react-native';
 import { Fumi } from 'react-native-textinput-effects';
 import codepen from 'react-native-vector-icons/Ionicons';
-import LinearGradient from 'react-native-linear-gradient';
 import Button from '../components/common/Button';
 import Dialog from 'react-native-dialog';
 
@@ -40,92 +39,71 @@ class Login extends Component {
 
         }
 
-
     }
-
 
     render() {
         return (
-            <LinearGradient colors={['#3780b2', '#000000']}
-                style={{
-                    width: 450, height: 800, backgroundColor: 'transparent'
-                    , position: 'absolute', overflow: 'hidden'
-                }}
-                locations={[0.4, 1.2]}
-            >
-                <ScrollView
-                    // style={styles.container}
-                    contentContainerStyle={styles.content}
+            <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
+                source={{ uri: 'beach' }} blurRadius={3}>
 
-                >
-                    <View style={{ marginTop: 100 }}>
-                        <View style={[styles.card2, { backgroundColor: 'transparent' }]}>
+                <View style={{ marginTop: 80 }}>
+                    <View style={[styles.card2, { backgroundColor: 'transparent' }]}>
 
-                            <Fumi
-                                style={styles.container}
-                                label={'code'}
-                                labelStyle={{ color: '#37b80b2', marginLeft: 5 }}
-                                iconClass={codepen}
-                                iconName={"logo-codepen"}
-                                iconColor={'#000080'}
-                                iconSize={20}
+                        <Fumi
+                            style={styles.container}
+                            label={'code'}
+                            labelStyle={{ color: '#37b80b2', marginLeft: 5 }}
+                            iconClass={codepen}
+                            iconName={"logo-codepen"}
+                            iconColor={'#000080'}
+                            iconSize={20}
 
-                                value={this.state.code}
-                                onChangeText={this.onCodeChange.bind(this)}
-                                maxLength={10}
-                                inputStyle={styles.input}
-                            />
-                            <Text style={{ left: 180, top: 10 }}>
-                                Character Left:{this.state.code.length}/10
+                            value={this.state.code}
+                            onChangeText={this.onCodeChange.bind(this)}
+                            maxLength={10}
+                            inputStyle={styles.input}
+                        />
+                        <Text style={{ left: 25, top: 10, fontWeight: 'bold' }}>
+                            Character Left:{this.state.code.length}/10
                             </Text>
 
 
-                        </View>
-
-
                     </View>
-                    <View style={{
-                        width: 280, marginTop: 50, position: 'absolute', flex: 1, alignSelf: 'stretch'
-                        , top: 190, left: 45
-                    }}>
 
-                        <Button
-                            text="Register"
-                            whenPressed={() => this.controler()}
-                        />
 
-                    </View>
-                    <View style={{
-                        width: 280, marginTop: 50, position: 'absolute', flex: 1, alignSelf: 'stretch'
-                        , top: 290, left: 45
-                    }}>
-                        <Button
-                            text="Details"
-                            //fuck you js
-                            whenPressed={() => this.showDialog()}
+                </View>
+                <View style={{
+                    width: 280, marginTop: 210, position: 'absolute', flex: 1, alignSelf: 'stretch'
+                    , top: 190, left: 45
+                }}>
 
-                        />
-                        <View style={{ elevation: 3 }}>
-                            <Dialog.Container visible={this.state.dialogVisible}>
-                                <Dialog.Title> Start </Dialog.Title>
-                                <Dialog.Description>
-                                    Enter ten character
+                    <Button
+                        text="Register"
+                        whenPressed={() => this.controler()}
+                    />
+
+                </View>
+                <View style={{
+                    width: 280, marginTop: 180, position: 'absolute', flex: 1, alignSelf: 'stretch'
+                    , top: 290, left: 45
+                }}>
+                    <Button
+                        text="Details"
+                        //fuck you js
+                        whenPressed={() => this.showDialog()}
+
+                    />
+                    <View style={{ elevation: 3 }}>
+                        <Dialog.Container visible={this.state.dialogVisible}>
+                            <Dialog.Title> Start </Dialog.Title>
+                            <Dialog.Description>
+                                Enter ten character
                                 </Dialog.Description>
-                                <Dialog.Button label="close" onPress={this.handleCancel} />
-                            </Dialog.Container>
-                        </View>
+                            <Dialog.Button label="close" onPress={this.handleCancel} />
+                        </Dialog.Container>
                     </View>
-
-
-
-
-
-
-
-                </ScrollView>
-
-
-            </LinearGradient>
+                </View>
+            </ImageBackground>
 
         )
     }

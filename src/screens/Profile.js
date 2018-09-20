@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ImageBackground, Picker } from "react-native";
 import { Isao } from 'react-native-textinput-effects';
-//import { Picker } from 'react-native-picker-dropdown';
 import Button from '../components/common/Button';
 
 
@@ -57,7 +56,7 @@ class Profile extends Component {
             activeColor={'#FFFFFF'}
             passiveColor={'#FFFFFF'}
           />
-          <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
             <View>
               <Text style={{ color: "#FFFFFF", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Entry Year</Text>
               <Picker
@@ -89,8 +88,8 @@ class Profile extends Component {
                 <Picker.Item label="Chemical Eng" value="1397" />
               </Picker>
 
-          
-            
+
+
 
             </View>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { createBottomTabNavigator } from "react-navigation";
 import TabOne from "../AppTabNavigator/TabOne";

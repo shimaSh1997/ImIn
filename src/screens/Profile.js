@@ -28,13 +28,20 @@ class Profile extends Component {
   onMobileChange = (text) => {
     this.setState({ mobile: text })
   }
+  onButtonPress = () => {
+    this.props.navigation.navigate("HomeActivity");
+  };
 
   render() {
     return (
-      <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }} source={{ uri: 'backtest' }}
+      <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
+        source={{ uri: 'backtest' }}
         blurRadius={2}>
 
-        <View style={[styles.card1, { backgroundColor: 'transparent', width: 280, marginLeft: 40, marginTop: 2 }]}>
+        <View style={[styles.card1, {
+          backgroundColor: 'transparent',
+          width: 280, marginLeft: 40, marginTop: 2
+        }]}>
           <Isao
             label={'First Name'}
             labelStyle={{ fontStyle: 'italic' }}
@@ -58,7 +65,10 @@ class Profile extends Component {
           />
           <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
             <View>
-              <Text style={{ color: "#FFFFFF", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Entry Year</Text>
+              <Text style={{
+                color: "#FFFFFF", fontWeight: 'bold',
+                marginTop: 40, marginLeft: 15, fontStyle: 'italic'
+              }}>Entry Year</Text>
               <Picker
                 selectedValue={this.state.entryYear}
                 onValueChange={this.onEntryYearChange}
@@ -74,7 +84,10 @@ class Profile extends Component {
 
             </View>
             <View>
-              <Text style={{ color: "#FFFFFF", fontWeight: 'bold', marginTop: 40, marginLeft: 15, fontStyle: 'italic' }}>Mager</Text>
+              <Text style={{
+                color: "#FFFFFF", fontWeight: 'bold',
+                marginTop: 40, marginLeft: 15, fontStyle: 'italic'
+              }}>Mager</Text>
               <Picker
                 selectedValue={this.state.mager}
                 onValueChange={this.onMagerChange}
@@ -101,6 +114,7 @@ class Profile extends Component {
         <View style={{ marginLeft: 40, marginTop: 30 }}>
           <Button
             text="Register"
+            whenPressed={this.onButtonPress.bind(this)}
           />
 
         </View>

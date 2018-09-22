@@ -37,7 +37,7 @@ const AppStackNavigator = StackNavigator({
   },
 
   headerMode: 'none',
-  initialRouteName: 'ProfileActivity'
+  initialRouteName: 'HomeActivity'
 
 })
 

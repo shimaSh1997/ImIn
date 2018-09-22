@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Image, Text, Dimensions } from "react-native";
+import { RkButton, RkTheme } from 'react-native-ui-kitten';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -7,6 +8,16 @@ export class CourseItemARG extends Component {
   render() {
     const imageWidth = SCREEN_WIDTH * 0.18;
     const offset = 10; // must be greater than 0
+    let accent = 'transparent';
+
+    RkTheme.setType('RkButton', 'accent', {
+      container: {
+        backgroundColor: accent
+      },
+      content: {
+        color: 'white'
+      }
+    })
 
     return (
       // root container
@@ -81,7 +92,20 @@ export class CourseItemARG extends Component {
               borderRadius: imageWidth / 2
             }}
           />
+          <View style={{
+            marginLeft: 190,
+            marginBottom: 9
+          }}>
+            <RkButton rkType='accent'
+              style={{
+                height: 33,
+                width: 85, borderWidth: 1, borderColor: '#FFFFFF'
+              }}>
+              Details
+            </RkButton>
+          </View>
         </View>
+
       </View>
     );
   }

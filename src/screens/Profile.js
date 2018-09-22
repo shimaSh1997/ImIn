@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ImageBackground, Picker } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, Picker, Dimensions } from "react-native";
 import { Isao } from 'react-native-textinput-effects';
 import Button from '../components/common/Button';
 

@@ -3,14 +3,17 @@ import {
     View,
     Text,
     StyleSheet,
-    ImageBackground
+    ImageBackground,
+    Dimensions,
+    ScrollView
 } from 'react-native';
 import { Fumi } from 'react-native-textinput-effects';
-import codepen from 'react-native-vector-icons/Ionicons';
+import key from 'react-native-vector-icons/FontAwesome';
 import Button from '../components/common/Button';
 import Dialog from 'react-native-dialog';
 
 
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 class Login extends Component {
     static navigationOptions = {
@@ -46,63 +49,63 @@ class Login extends Component {
             <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'cover' }}
                 source={{ uri: 'beach' }} blurRadius={3}>
 
-                <View style={{ marginTop: 80 }}>
-                    <View style={[styles.card2, { backgroundColor: 'transparent' }]}>
+                <ScrollView
+                    style={styles.container}
+                    contentContainerStyle={styles.content}
+                >
+                    <View style={{ marginTop: SCREEN_HEIGHT * 0.1 }}>
+                        <View style={[styles.card2, { backgroundColor: 'transparent' }]}>
 
-                        <Fumi
-                            style={styles.container}
-                            label={'code'}
-                            labelStyle={{ color: '#37b80b2', marginLeft: 5 }}
-                            iconClass={codepen}
-                            iconName={"logo-codepen"}
-                            iconColor={'#000080'}
-                            iconSize={20}
+                            <Fumi
+                                style={styles.container}
+                                label={'code'}
+                                labelStyle={{ color: 'rgb(0,0,0.4)' }}
+                                iconClass={key}
+                                iconName={"key"}
+                                iconColor={'#ddd'}
+                                iconSize={20}
 
-                            value={this.state.code}
-                            onChangeText={this.onCodeChange.bind(this)}
-                            maxLength={10}
-                            inputStyle={styles.input}
-                        />
-                        <Text style={{ left: 25, top: 10, fontWeight: 'bold' }}>
-                            Character Left:{this.state.code.length}/10
+                                value={this.state.code}
+                                onChangeText={this.onCodeChange.bind(this)}
+                                maxLength={10}
+                                inputStyle={styles.input}
+                                keyboardType="numeric"
+                            />
+                            <Text style={{ left: SCREEN_WIDTH * 0.1, top: SCREEN_HEIGHT * 0.01, fontWeight: 'bold' }}>
+                                Character Left:{this.state.code.length}/10
                             </Text>
-
-
+                        </View>
                     </View>
-
-
-                </View>
-                <View style={{
-                    width: 280, marginTop: 210, position: 'absolute', flex: 1, alignSelf: 'stretch'
-                    , top: 190, left: 45
-                }}>
-
-                    <Button
-                        text="Register"
-                        whenPressed={() => this.controler()}
-                    />
-
-                </View>
-                <View style={{
-                    width: 280, marginTop: 180, position: 'absolute', flex: 1, alignSelf: 'stretch'
-                    , top: 290, left: 45
-                }}>
-                    <Button
-                        text="Details"
-                        //fuck you js
-                        whenPressed={() => this.showDialog()}
-
-                    />
-                    <View style={{ elevation: 3 }}>
-                        <Dialog.Container visible={this.state.dialogVisible}>
-                            <Dialog.Title> Start </Dialog.Title>
-                            <Dialog.Description>
-                                Enter ten character
+                    <View style={{
+                        marginTop: SCREEN_HEIGHT * 0.5, padding: 20,
+                        marginLeft: 'auto', marginRight: 'auto',
+                        width: "100%", height: 160,
+                        flexDirection: 'column', justifyContent: 'space-between'
+                    }}>
+                        <Button
+                            text='Register'
+                            whenPressed={() => this.controler()}
+                        />
+                        <Button
+                            text='Details'
+                            whenPressed={() => this.showDialog()}
+                        />
+                        <View style={{ elevation: 3 }}>
+                            <Dialog.Container visible={this.state.dialogVisible}>
+                                <Dialog.Title> Start </Dialog.Title>
+                                <Dialog.Description>
+                                    Enter ten character
                                 </Dialog.Description>
-                            <Dialog.Button label="close" onPress={this.handleCancel} />
-                        </Dialog.Container>
+                                <Dialog.Button label="close" onPress={this.handleCancel} />
+                            </Dialog.Container>
+                        </View>
+
                     </View>
-                </View>
+
+
+
+                </ScrollView>
+
             </ImageBackground>
 
         )
@@ -139,4 +142,3 @@ const styles = StyleSheet.create({
         position: 'absolute'
     }
 })
-

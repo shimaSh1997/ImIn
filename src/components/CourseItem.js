@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
-import Card from './common/Card';
+import React, { Component } from "react";
+import { View, Image, Text, Dimensions } from "react-native";
 import { RkButton, RkTheme } from 'react-native-ui-kitten';
 
-
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 class CourseItem extends Component {
-
-
     render() {
+        const imageWidth = SCREEN_WIDTH * 0.18;
+        const offset = 10; // must be greater than 0
         let accent = 'transparent';
 
         RkTheme.setType('RkButton', 'accent', {
@@ -19,51 +18,97 @@ class CourseItem extends Component {
                 color: 'white'
             }
         })
+
         return (
+            // root container
+            <View
+                style={{
+                    width: "100%",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: 15,
+                    paddingTop: imageWidth / 2
+                }}
+            >
+                {/* balck Container */}
+                <View
+                    style={{
+                        paddingVertical: 5,
+                        width: SCREEN_WIDTH * 0.8,
+                        backgroundColor: "rgba(0,0,0,0.4)"
+                    }}
+                >
+                    <View
+                        style={{
+                            width: "90%",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            marginVertical: 10
+                        }}
+                    >
+                        <Image
+                            style={{
+                                width: "100%",
+                                height: 90,
+                                borderRadius: 3
+                            }}
+                            source={require("../assets/images/rnbanner.jpg")}
+                        />
 
-
-            <View style={{ marginTop: 19, marginLeft: 20, alignContent: 'center' }} >
-                <Card>
-                    <View style={{
-                        position: 'absolute', elevation: 2, flex: 1,
-                        width: "100%", height: "90%", marginTop: 11, marginLeft: 15
-                    }}>
-                        <Image style={{ width: "90%", height: "30%", borderRadius: 5 }}
-                            source={{ uri: 'react' }} />
+                        <Text
+                            style={{
+                                color: "#fff",
+                                fontSize: 20,
+                                marginVertical: 15,
+                                fontWeight: "bold"
+                            }}
+                        >
+                            Hands On React Native
+            </Text>
+                        <Text
+                            style={{
+                                color: "#fff",
+                                fontSize: 15,
+                                marginLeft: 5,
+                                fontFamily: "Quicksand-Bold"
+                            }}
+                        >
+                            The Focus of React Native is on developer efficiency across all
+                            the platforms you care about-learn once ,write anywere.faceBook
+                            uses react Native in multiple production apps and will continue
+                            investing in react Native.
+            </Text>
                     </View>
+
+                    <Image
+                        source={{ uri: "shima" }}
+                        style={{
+                            top: -imageWidth / 2 + offset,
+                            right: -imageWidth / 2 + offset,
+                            width: imageWidth,
+                            height: imageWidth,
+                            position: "absolute",
+                            borderRadius: imageWidth / 2
+                        }}
+                    />
                     <View style={{
-                        flex: 1,
-                        marginTop: -18,
-                        marginLeft: 275
-
+                        marginLeft: 190,
+                        marginBottom: 9
                     }}>
-                        <Image style={{ width: 55, height: 55, borderRadius: 150 / 2, elevation: 5 }}
-                            source={{ uri: 'shima' }} />
-
-                    </View>
-                    <Text style={{
-                        flex: 2, marginTop: 110, marginLeft: 19,
-                        color: "#FFFFFF", fontWeight: 'bold', fontSize: 16
-                    }}>
-                        Hands On React Native
-                </Text>
-                    <Text style={{ fontFamily: 'Quicksand-Bold', flex: 7, color: "#FFFFFF", marginLeft: 15 }}>
-                        The Focus of React Native is on developer efficiency across all the platforms you care about-learn once
-                        ,write anywere.faceBook uses react Native in multiple production apps and will continue investing in react Native.
-                </Text>
-                    <View style={{ marginLeft: 203, marginBottom: 9 }}>
-                        <RkButton rkType='accent' style={{
-                            height: 33,
-                            width: 85, borderWidth: 1, borderColor: '#FFFFFF'
-                        }}>
+                        <RkButton rkType='accent'
+                            style={{
+                                height: 33,
+                                width: 85, borderWidth: 1, borderColor: '#FFFFFF'
+                            }}>
                             Details
-                        </RkButton>
+            </RkButton>
                     </View>
-                </Card>
+                </View>
+
             </View>
-        )
+        );
     }
 }
 
 export default CourseItem;
-

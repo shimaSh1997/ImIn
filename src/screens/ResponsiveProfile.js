@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ImageBackground, Dimensions, KeyboardAvoidingView, Picker } from "react-native";
 import { Isao } from 'react-native-textinput-effects';
-
+import Button from '../components/common/Button';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 const PADDINGH = SCREEN_WIDTH * 0.129
@@ -10,7 +10,7 @@ class ResponsiveProfile extends Component {
     static navigationOptions = {
         header: null
     };
-    state = { name: "", lastName: "", entryYear: "1395", mager: "", mobile: "" }
+    state = { name: "", lastName: "", entryYear: "", major: "", degree: "" }
 
     onNameChange = (text) => {
         this.setState({ name: text })
@@ -22,12 +22,21 @@ class ResponsiveProfile extends Component {
     onEntryYearChange = (text) => {
         this.setState({ entryYear: text })
     }
-    onMagerChange = (text) => {
-        this.setState({ mager: text })
+    onMajorChange = (text) => {
+        this.setState({ major: text })
     }
-    onMobileChange = (text) => {
-        this.setState({ mobile: text })
+    onDegreeChange = (text) => {
+        this.setState({ degree: text })
     }
+    controler = () => {
+        return (
+            this.props.navigation.navigate("HomeActivity")
+        )
+
+
+    }
+
+
 
     render() {
         return (
@@ -47,9 +56,9 @@ class ResponsiveProfile extends Component {
                 }}>
                     <View style={{
                         width: SCREEN_WIDTH * 0.8,
-                        height: "100%",
+                        height: SCREEN_HEIGHT * 0.7,
                         backgroundColor: "transparent",
-                        paddingVertical: 45
+                        paddingVertical: 20
                     }}>
                         <KeyboardAvoidingView behavior="padding" enabled>
                             <Isao
@@ -81,7 +90,7 @@ class ResponsiveProfile extends Component {
                             marginVertical: 20
                         }}>
                             <View style={{ flexDirection: 'column' }}>
-                                <Text style={{color:'#FFF',fontStyle:'italic',fontWeight: 'bold'}}> Entry Year</Text>
+                                <Text style={{ color: '#FFF', fontStyle: 'italic', fontWeight: 'bold' }}> Entry Year</Text>
                                 <Picker
                                     selectedValue={this.state.entryYear}
                                     onValueChange={this.onEntryYearChange}
@@ -98,10 +107,10 @@ class ResponsiveProfile extends Component {
                             </View>
 
                             <View style={{ flexDirection: 'column' }}>
-                                <Text style={{color:'#FFF',fontStyle:'italic',fontWeight: 'bold'}}> Degree</Text>
+                                <Text style={{ color: '#FFF', fontStyle: 'italic', fontWeight: 'bold' }}> Degree</Text>
                                 <Picker
-                                    selectedValue={this.state.entryYear}
-                                    onValueChange={this.onEntryYearChange}
+                                    selectedValue={this.state.degree}
+                                    onValueChange={this.onDegreeChange}
 
                                     mode="dropdown"
                                     style={styles.picker}
@@ -117,36 +126,48 @@ class ResponsiveProfile extends Component {
                         </View>
                         <View style={{
                             backgroundColor: 'transparent', width: "100%", height: 70,
-                            marginVertical: 2,marginLeft:"auto",
-                            marginRight: "auto",
+                            marginVertical: 2, marginLeft: "auto",
+                            marginRight: "auto"
                         }}>
-                            <View style={{ flexDirection: 'column',
-                            justifyContent:'space-around',alignItems:'center' }}>
-                                <Text style={{color:'#FFF',fontStyle:'italic',fontWeight: 'bold'}}> Major</Text>
+                            <View style={{
+                                justifyContent: 'center', alignItems: 'center', flexDirection: 'column'
+                            }}>
+                                <Text style={{ color: '#FFF', fontStyle: 'italic', fontWeight: 'bold' }}> Major</Text>
                                 <Picker
-                                    selectedValue={this.state.entryYear}
-                                    onValueChange={this.onEntryYearChange}
+                                    selectedValue={this.state.major}
+                                    onValueChange={this.onMajorChange}
 
                                     mode="dropdown"
                                     style={{
                                         backgroundColor: 'transparent',
-                                        paddingHorizontal:SCREEN_WIDTH * 0.199,
+                                        paddingHorizontal: SCREEN_WIDTH * 0.29,
                                         paddingVertical: 20,
-                                        color: '#FFFFFF'
+                                        color: '#FFFFFF',
+                                        marginLeft: SCREEN_WIDTH * 0.2
+
                                     }}
                                 >
-                                    <Picker.Item label="ComputerEng" value="ComputerEng" />
-                                    <Picker.Item label="ChemistryEng" value="ChemistryEng" />
-                                    <Picker.Item label="OilEng" value="OilEng" />
-                                    <Picker.Item label="IndusterialEng" value="IndusterialEng" />
+                                    <Picker.Item label="ComputerEngineering" value="ComputerEngineering" />
+                                    <Picker.Item label="ChemistryEngineering" value="ChemistryEngineering" />
+                                    <Picker.Item label="OilEngineering" value="OilEngineering" />
+                                    <Picker.Item label="IndusterialEngineering" value="IndusterialEngineering" />
                                 </Picker>
 
                             </View>
 
                         </View>
 
-
                     </View>
+                    <View style={{
+                        width: "100%", marginVertical: 30, marginBottom: 'auto'
+
+                    }}>
+                        <Button
+                            text='Register'
+                            whenPressed={() => this.controler()}
+                        />
+                    </View>
+
 
                 </View>
             </ImageBackground>

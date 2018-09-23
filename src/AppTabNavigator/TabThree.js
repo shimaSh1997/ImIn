@@ -1,11 +1,25 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import Card from "../components/common/Card";
-import CardSection from "../components/common/CardSection";
+import { StyleSheet, ImageBackground } from "react-native";
 import CourseItem from "../components/CourseItem";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class TabThree extends Component {
   state = { name: "" };
+  
+  static navigationOptions = {
+    
+    
+    tabBarIcon: ({ focused, tintColor }) => {
+      iconName = `ios-school${focused ? '' : '-outline'}`;
+      return <Ionicons name={iconName} size={25} color={tintColor} />;
+    },
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+    header: null
+  }
+  
 
   // onNameChange(text) {
   //   this.setState({ name: text });

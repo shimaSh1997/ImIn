@@ -1,29 +1,41 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import { CourseItemARG } from "../components/CourseItemARG";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class TabOne extends Component {
-  // static navigationOptions = {
-  //     header: null
-  // }
 
-  render() {
-    return (
-      <ImageBackground
-        style={{ flex: 1, width: null, height: null, resizeMode: "stretch" }}
-        source={{ uri: "sea" }}
-        blurRadius={10}
-      >
-        <CourseItemARG />
-      </ImageBackground>
-    );
+
+  static navigationOptions = {
+    header: null,
+    
+    tabBarIcon: ({ focused, tintColor }) => {
+      iconName = `ios-school${focused ? '' : '-outline'}`;
+      return <Ionicons name={iconName} size={25} color={tintColor} />;
+    },
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    }
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
+
+
+    render() {
+      return (
+        <ImageBackground
+          style={{ flex: 1, width: null, height: null, resizeMode: "stretch" }}
+          source={{ uri: "sea" }}
+          blurRadius={10}
+        >
+        </ImageBackground>
+      );
+    }
   }
-});
 
-export default TabOne;
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1
+    }
+  });
+
+  export default TabOne;

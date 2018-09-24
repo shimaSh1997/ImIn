@@ -52,6 +52,7 @@ class Login extends Component {
                 <ScrollView
                     style={styles.container}
                     contentContainerStyle={styles.content}
+                    scrollEnabled={false}
                 >
                     <View style={{ marginTop: SCREEN_HEIGHT * 0.1 }}>
                         <View style={[styles.card2, { backgroundColor: 'transparent' }]}>

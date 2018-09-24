@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, ImageBackground, Dimensions, KeyboardAvoidingView, Picker } from "react-native";
 import { Isao } from 'react-native-textinput-effects';
 import Button from '../components/common/Button';
+import ReplaceComponent from "./ReplaceComponent";
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 const PADDINGH = SCREEN_WIDTH * 0.129
@@ -30,7 +31,8 @@ class ResponsiveProfile extends Component {
     }
     controler = () => {
         return (
-            this.props.navigation.navigate("HomeActivity")
+            // this.props.navigation.navigate("HomeActivity")
+            this.props.navigation.push("ReplaceActivity")
         )
 
 
@@ -78,10 +80,11 @@ class ResponsiveProfile extends Component {
                             <Isao
                                 style={{ marginTop: 4 }}
                                 labelStyle={{ fontStyle: 'italic' }}
-                                label={'Email'}
+                                label={'Mobile'}
                                 activeColor={'#FFFFFF'}
                                 passiveColor={'#FFFFFF'}
                             />
+                            
                         </KeyboardAvoidingView>
                         <View style={{
                             flexDirection: 'row', justifyContent: 'space-around',
@@ -163,7 +166,7 @@ class ResponsiveProfile extends Component {
 
                     }}>
                         <Button
-                            text='Register'
+                            text='Continue'
                             whenPressed={() => this.controler()}
                         />
                     </View>

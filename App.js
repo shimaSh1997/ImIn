@@ -9,6 +9,7 @@ import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import Detail from './src/screens/Detail';
 import ResponsiveProfile from './src/screens/ResponsiveProfile';
+import ReplaceComponent from './src/screens/ReplaceComponent';
 
 
 class App extends Component {
@@ -34,6 +35,9 @@ const AppStackNavigator = StackNavigator({
   },
   ProfileActivity: {
     screen: ResponsiveProfile
+  },
+  ReplaceActivity:{
+    screen:ReplaceComponent
   },
 
   headerMode: 'none',

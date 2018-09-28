@@ -16,7 +16,7 @@ const PADDINGH = SCREEN_WIDTH * 0.129
 
 class ReplaceComponent extends Component {
     static navigationOptions = {
-        header:null
+        header: null
     };
     controler = () => {
         return (
@@ -65,19 +65,19 @@ class ReplaceComponent extends Component {
 
                         </KeyboardAvoidingView>
                     </View>
-                    
+
                 </View>
                 <View style={{
-                        width: "90%", marginVertical: -100, marginBottom: SCREEN_HEIGHT*0.29,marginLeft:'auto',
-                        marginRight:'auto'
+                    width: "90%", marginVertical: -100, marginBottom: SCREEN_HEIGHT * 0.29, marginLeft: 'auto',
+                    marginRight: 'auto'
 
-                    }}>
-                        <Button
-                            text='Register'
-                            whenPressed={() => this.controler()}
+                }}>
+                    <Button
+                        text='Register'
+                        whenPressed={() => this.controler()}
 
-                        />
-                    </View>
+                    />
+                </View>
 
 
             </ImageBackground>

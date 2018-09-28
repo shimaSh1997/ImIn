@@ -2,24 +2,19 @@ import React, { Component } from "react";
 import { StyleSheet, ImageBackground } from "react-native";
 import CourseItem from "../components/CourseItem";
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
+import ModalExample from "../components/ModalExample";
+
 
 class TabThree extends Component {
   state = { name: "" };
-  
+
   static navigationOptions = {
-    
-    
-    tabBarIcon: ({ focused, tintColor }) => {
-      iconName = `ios-school${focused ? '' : '-outline'}`;
-      return <Ionicons name={iconName} size={25} color={tintColor} />;
-    },
-    tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
-    },
     header: null
   }
-  
+
+
+
 
   // onNameChange(text) {
   //   this.setState({ name: text });
@@ -36,7 +31,12 @@ class TabThree extends Component {
       <ImageBackground style={{ flex: 1, width: null, height: null, resizeMode: 'stretch' }}
         source={{ uri: 'sea' }}
         blurRadius={10}>
-        <CourseItem />
+        <CourseItem stack={this.props.stackNavigation} />
+        <ModalExample />
+
+
+
+
 
       </ImageBackground>
 

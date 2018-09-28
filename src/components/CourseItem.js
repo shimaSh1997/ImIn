@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Image, Text, Dimensions } from "react-native";
-import { RkButton, RkTheme } from 'react-native-ui-kitten';
+import CourseItemButton from '../components/common/CourseItemButton';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 
@@ -10,14 +10,14 @@ class CourseItem extends Component {
         const offset = 10; // must be greater than 0
         let accent = 'transparent';
 
-        RkTheme.setType('RkButton', 'accent', {
-            container: {
-                backgroundColor: accent
-            },
-            content: {
-                color: 'white'
-            }
-        })
+        // RkTheme.setType('RkButton', 'accent', {
+        //     container: {
+        //         backgroundColor: accent
+        //     },
+        //     content: {
+        //         color: 'white'
+        //     }
+        // })
 
         return (
             // root container
@@ -96,13 +96,11 @@ class CourseItem extends Component {
                         marginLeft: 190,
                         marginBottom: 9
                     }}>
-                        <RkButton rkType='accent'
-                            style={{
-                                height: 33,
-                                width: 85, borderWidth: 1, borderColor: '#FFFFFF'
-                            }}>
-                            Details
-            </RkButton>
+                        <CourseItemButton
+                            text="Details"
+                            whenPressed={() => this.props.stack.navigate("DetailActivity")}>
+
+                        </CourseItemButton>
                     </View>
                 </View>
 

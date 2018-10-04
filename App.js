@@ -36,13 +36,15 @@ const AppStackNavigator = StackNavigator({
   ProfileActivity: {
     screen: ResponsiveProfile
   },
-  ReplaceActivity:{
-    screen:ReplaceComponent
+  ReplaceActivity: {
+    screen: ReplaceComponent
   },
 
-  headerMode: 'none',
-  initialRouteName: 'LoginActivity'
 
-})
+}, {
+
+    headerMode: "none",
+    initialRouteName: 'HomeActivity'
+  })
 
 export default App;

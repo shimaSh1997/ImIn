@@ -6,7 +6,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FabButton from '../components/common/FabButton';
 import ModalButton from '../components/common/ModalButton';
 
-class ModalExample extends Component {
+//toDo make this Modal ReUsable
+class CourseFilterModal extends Component {
     state = {
         modalVisible: false,
     };
@@ -208,7 +209,7 @@ class ModalExample extends Component {
                             <View style={{
                                 flexDirection: 'row', backgroundColor: 'transparent',
                                 justifyContent: 'flex-end', marginLeft: 'auto'
-                                , marginRight: 20, marginTop: -20
+                                , marginRight: 20, marginTop: 2
                             }}>
                                 <ModalButton
                                     text="Apply">
@@ -234,4 +235,4 @@ class ModalExample extends Component {
     }
 }
 
-export default ModalExample;
+export default CourseFilterModal;

@@ -1,20 +1,24 @@
 import React, { Component } from "react";
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground, View, Image } from "react-native";
 import CourseItem from "../components/CourseItem";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ModalExample from "../components/ModalExample";
+import Modal from "react-native-modal";
+import FabButton from '../components/common/FabButton';
+import CourseFilterModal from '../components/CourseFilterModal';
+
 
 
 class TabThree extends Component {
-  state = { name: "" };
+  state = { name: "", modalVisible: false };
 
   static navigationOptions = {
     header: null
   }
 
-
-
+  setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
 
   // onNameChange(text) {
   //   this.setState({ name: text });
@@ -32,11 +36,20 @@ class TabThree extends Component {
         source={{ uri: 'sea' }}
         blurRadius={10}>
         <CourseItem stack={this.props.stackNavigation} />
-        <ModalExample />
+        <View style={{ justifyContent: 'flex-end', alignItems: 'flex-end', marginRight: 10 }}>
+          <FabButton whenPressed={() => this.setModalVisible(true)}
+            png="filter"
+          />
 
+        </View>
 
+        <Modal isVisible={this.state.modalVisible} onBackButtonPress={() => this.setModalVisible(false)}
+          onBackdropPress={() => this.setModalVisible(false)}
+          animationIn='slideInUp'
+        >
 
-
+          <CourseFilterModal onCancelPress={() => this.setModalVisible(false)} />
+        </Modal>
 
       </ImageBackground>
 

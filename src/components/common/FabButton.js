@@ -1,14 +1,24 @@
 import React from 'react';
-import {View,Text,TouchableOpacity} from 'react-native';
+import { View, Text, TouchableWithoutFeedback, Image } from 'react-native';
 
 
 const FabButton = (props) => {
     return (
-        <TouchableOpacity onPress={props.whenPressed} style={{ backgroundColor: '#FFFFFF',
-        borderRadius: 10,width:50,height:50,borderRadius:30,position:'absolute',top:10,right:10,alignItems:'center'
-        ,justifyContent:'center'}} >
-            <Text style={{fontWeight:'400',color: '#000', fontSize: 18}} > {props.text} </Text>
-        </TouchableOpacity>
+        <TouchableWithoutFeedback onPress={props.whenPressed}>
+            <View style={{
+                borderRadius: 30,
+                backgroundColor: '#FFFFFF',
+                height: 60, width: 60, alignItems: 'center', justifyContent: 'center'
+            }}>
+                <Image style={{ width: 20, height: 20 }} source={{ uri: props.png }} />
+
+            </View>
+
+        </TouchableWithoutFeedback>
+
+
+
+
     )
 
 
@@ -24,11 +34,11 @@ const styles = {
     },
 
     buttonStyle: {
-        
-        alignSelf:'stretch',
+
+        alignSelf: 'stretch',
         backgroundColor: '#FFFFFF',
         borderRadius: 50,
-        
+
         borderColor: '#372b60',
         opacity: 10,
         shadowOpacity: 10

@@ -10,6 +10,7 @@ import Login from './src/screens/Login';
 import Detail from './src/screens/Detail';
 import ResponsiveProfile from './src/screens/ResponsiveProfile';
 import ReplaceComponent from './src/screens/ReplaceComponent';
+import Enrolled from './src/screens/Enrolled';
 
 
 class App extends Component {
@@ -39,6 +40,9 @@ const AppStackNavigator = StackNavigator({
   ReplaceActivity: {
     screen: ReplaceComponent
   },
+  EnrolledActivity: {
+    screen: Enrolled
+  }
 
 
 }, {

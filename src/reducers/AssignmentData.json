@@ -1,0 +1,41 @@
+[
+  {
+    "id": 0,
+    "session": "Session 1",
+    "title": "More On React Native and UI Component ghyt",
+    "titleExpanded": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "presence": true,
+    "date":"97/2/8",
+    "time":"14:30"
+  },
+  {
+    "id": 1,
+    "session": "Session 2",
+    "titleExpanded": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "title": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "presence": false,
+    "date":"97/2/8",
+    "time":"14:30"
+  },
+  {
+    "id": 2,
+    "session": "Session 3",
+    "titleExpanded": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "title": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "presence": false,
+    "date":"97/2/8",
+    "time":"14:30"
+
+  },
+  {
+    "id": 3,
+    "session": "Session 4",
+    "titleExpanded": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "title": "More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt",
+    "presence": true,
+    "date":"97/2/8",
+    "time":"14:30"
+
+  }
+  
+]

@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "react-navigation";
 import TabOne from "../AppTabNavigator/TabOne";
 import TabTwo from "../AppTabNavigator/TabTwo";
 import TabThree from "../AppTabNavigator/TabThree";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from "react-native-vector-icons/Ionicons";
 
 class Home extends Component {
   static navigationOptions = {
@@ -23,7 +23,7 @@ const AppTabNavigator = navigation => {
       screen: TabOne
     },
     HomeTab: {
-      screen: TabTwo
+      screen: () => <TabTwo stackNavigation={navigation}/>
     },
     Courses: {
       screen: () => <TabThree stackNavigation={navigation} />

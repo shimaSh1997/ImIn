@@ -41,7 +41,7 @@ class Detail extends Component {
 
               }}>19:30</Text>
             </View>
-            <Text numberOfLines={2} lineBreakMode="tail" style={{
+            <Text numberOfLines={3} lineBreakMode="tail" style={{
               color: '#fff', fontFamily: 'Quicksand-Bold', marginLeft: 20, marginTop: 15 
 
             }}>More On React Native and UI Component ghyhryihryjioyjyotghugruhgrhttruthrti trghdeyhyhey thyt</Text>

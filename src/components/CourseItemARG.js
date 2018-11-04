@@ -93,8 +93,10 @@ export class CourseItemARG extends Component {
             }}
           />
           <View style={{
-            marginLeft: 190,
+            marginLeft: 'auto',
+            marginRight:'auto',
             marginBottom: 9
+            
           }}>
             <RkButton rkType='accent'
               style={{

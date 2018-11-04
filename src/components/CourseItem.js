@@ -93,7 +93,8 @@ class CourseItem extends Component {
                         }}
                     />
                     <View style={{
-                        marginLeft: 190,
+                        marginLeft: 'auto',
+                        marginRight:20,
                         marginBottom: 9
                     }}>
                         <CourseItemButton

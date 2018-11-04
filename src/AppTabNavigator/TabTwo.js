@@ -1,37 +1,39 @@
-import React ,{ Component } from 'react';
+import React, { Component } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity
+    View,
+    StyleSheet
 } from 'react-native';
+import ModalButton from '../components/common/FabButton'
 
 
+class TabTwo extends Component {
+    static navigationOptions = {
+        header: null
+    }
 
-class TabTwo extends Component{
-    // static navigationOptions = {
-    //     header: null
-    // }
+    onButtonPress = () => {
+        this.props.stackNavigation.navigate("EnrolledActivity")
+    }
 
-    render(){
-        return(
+    render() {
+        return (
             <View style={styles.container}>
-                    <Text>
-                        Tab Two
-                    </Text>
+                <ModalButton
+                    text="goTo"
+                    whenPressed={() => this.onButtonPress()}
+
+                />
             </View>
         )
     }
 }
 
-
-
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent:'center',
-        alignItems:'center',
-        
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+
     }
 })
 

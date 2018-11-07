@@ -21,8 +21,9 @@ class ListItem extends Component {
 					style={{
 						flexDirection: 'row',
 						padding: 10,
-						marginTop: 12,
-						backgroundColor: 'transparent'
+						marginTop: 10,
+						backgroundColor: 'transparent',
+						justifyContent:'space-between'
 					}}
 				>
 					<Text
@@ -38,7 +39,7 @@ class ListItem extends Component {
 						style={{
 							color: '#fff',
 							fontFamily: 'Quicksand-Bold',
-							marginLeft: 110
+							marginLeft: SCREEN_WIDTH * 0.2
 						}}
 					>
 						{this.props.date}
@@ -46,16 +47,15 @@ class ListItem extends Component {
 					<Text
 						style={{
 							color: '#fff',
-							fontFamily: 'Quicksand-Bold',
-							marginLeft: 10
+							fontFamily: 'Quicksand-Bold'
+							
+							
 						}}
 					>
 						{this.props.time}
 					</Text>
 				</View>
 				<Text
-					numberOfLines={3}
-					lineBreakMode="tail"
 					style={{
 						color: '#fff',
 						fontFamily: 'Quicksand-Bold',

@@ -1,14 +1,22 @@
 import React from 'react';
-import { View, Text, ImageBackground, Dimensions, Image, Alert, FlatList } from 'react-native';
+import { View, Text, ImageBackground, Dimensions, Image, Alert, FlatList, TouchableOpacity } from 'react-native';
 import ListItem from '../components/ListItem';
 import * as Progress from 'react-native-progress';
 import { connect } from 'react-redux';
+import Modal from 'react-native-modal';
+import InfoModal from '../components/InfoModal';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const imageWidth = SCREEN_WIDTH * 0.24;
 
 class Enrolled extends React.Component {
-	state = { percent: 0.5, color: 'red' };
+	state = { percent: 0.5, color: 'red', modalVisible: false };
+
+	setModalVisible(visible) {
+		this.setState({ modalVisible: visible });
+	}
 
 	renderListItem({ item, index }) {
 		return (
@@ -62,15 +70,43 @@ class Enrolled extends React.Component {
 						backgroundColor: 'rgba(0,0,0,0.4)'
 					}}
 				>
-					<Text
+					<View
 						style={{
-							color: '#fff',
-							fontSize: 22,
-							marginLeft: SCREEN_WIDTH * 0.31
+							justifyContent: 'center',
+							alignItems: 'center',
+							flexDirection: 'row',
+							marginHorizontal:10
 						}}
 					>
-						React Native
-					</Text>
+						<Text
+							style={{
+								color: '#fff',
+								fontSize: 22,
+								justifyContent:'center',
+								alignItems:'center',
+								marginLeft:100
+							}}
+						>
+							React Native
+						</Text>
+						<TouchableOpacity
+							style={{ marginLeft:'auto'}}
+							onPress={() => this.setModalVisible(true)}
+						>
+							{/* <Image style={{ width: 25, height: 25 }} source={{ uri: 'info' }} /> */}
+							<Icon name={`information-circle`} size={25} color="#fff" />
+
+						</TouchableOpacity>
+
+						<Modal
+							isVisible={this.state.modalVisible}
+							onBackButtonPress={() => this.setModalVisible(false)}
+							onBackdropPress={() => this.setModalVisible(false)}
+							animationIn="slideInUp"
+						>
+							<InfoModal />
+						</Modal>
+					</View>
 
 					<Image
 						source={{ uri: 'shima' }}
